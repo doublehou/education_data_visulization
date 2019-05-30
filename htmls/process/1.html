@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>普通小学专任教师数量</title>
+    <link rel="stylesheet" href="../../css/layui.css">
+</head>
+
+<body>
+    <div class="header">普通小学专任教师数量</div>
+    <div id="type">
+        <button data-type="A" class="layui-btn">云南</button>
+        <button data-type="B" class="layui-btn layui-btn-primary">贵州</button>
+        <button data-type="C" class="layui-btn layui-btn-primary">黑龙江</button>
+    </div>
+    <div id="main"></div>
+</body>
+<script src="../../layui.js"></script>
+<script src="../../chart.js"></script>
+<script src="../../jquery-1.11.3.min.js"></script>
+<script>
+    var types = ["A"];
+    layui.use('element', () => { var element = layui.element });
+    $(document).ready(() => {
+        $("#main").css({ 'width': document.documentElement.clientWidth - 20, 'height': document.documentElement.clientHeight - 110 })
+        
+        getData();
+        fun();
+    })
+
+    function getData(){
+        $.ajax({
+            type: "POST",
+            url: "http://127.0.0.1/data/getData.php",
+            data: {},
+            dataType: "json",
+            success: function(data){
+                console.log(data[0]);
+                transto(data[0]);
+            }
+         });
+    }
+
+    function transto(data){
+        var xData = [], res = [];
+        data.forEach(element => {
+            res.push(element["小学专任教师数量"]);
+            xData.push(element["年份"]);
+        });
+        chart(xData,res);
+    }
+
+    function fun() {
+        $("#type button").click(function (e) {
+            if (e.target.className === "layui-btn layui-btn-primary") {
+                this.className = "layui-btn";
+                types.push(e.target.dataset.type);
+            } else {
+                this.className = "layui-btn layui-btn-primary";
+                types.splice(types.indexOf(e.target.dataset.type), 1);
+            }
+            // types.length === 0 ? $("#main").css('display', 'none') : $("#main").css('display', 'block');
+        })
+
+        // chart();
+    }
+
+
+    //图表渲染
+    function chart(xData,data) {
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {},
+            legend: {
+                data: ['云南']
+            },
+            xAxis: {
+                data: xData
+            },
+            yAxis: {},
+            series: [{
+                name: '普通小学专任教师数量',
+                type: 'line',
+                data: data
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+
+</script>
+
+</html>
