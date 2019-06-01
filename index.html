@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>云贵黑教育发展程度</title>
+    <title>教育发展分析可视化系统</title>
     <link rel="stylesheet" href="css/layui.css">
     <style>
         * {
@@ -32,58 +32,61 @@
 
 <body class="layui-layout-body">
     <div class="layui-card">
-        <div class="layui-card-header  layui-bg-green">云贵黑</div>
+        <div class="layui-card-header  layui-bg-green">教育发展分析可视化系统</div>
         <div class="layui-card-body">
             <div class="container">
                 <div class="left">
                     <div class="layui-collapse">
                         <div class="layui-colla-item">
-                            <h2 class="layui-colla-title layui-bg-green">普通小学专任教师数量</h2>
+                            <h2 class="layui-colla-title layui-bg-green">教育规模</h2>
                             <div class="layui-colla-content layui-show">
                                 <div id="dataType">
-                                    <button data-type="A" class="layui-btn layui-btn-sm layui-btn-primary">云南</button>
-                                    <button data-type="B" class="layui-btn layui-btn-sm layui-btn-primary">贵州</button>
-                                    <button data-type="C" class="layui-btn layui-btn-sm layui-btn-primary">黑龙江</button>
+                                    <button data-type="A" class="layui-btn layui-btn-sm layui-btn-primary">小学招生人数</button>
+                                    <button data-type="B" class="layui-btn layui-btn-sm layui-btn-primary">中学招生人数</button>
+                                    <button data-type="C" class="layui-btn layui-btn-sm layui-btn-primary">小学毕业人数</button>
+                                    <button data-type="D" class="layui-btn layui-btn-sm layui-btn-primary">中学毕业人数</button>
                                 </div>
                             </div>
                         </div>
                         <div class="layui-colla-item">
-                            <h2 class="layui-colla-title layui-bg-green">普通小学专任教师数量</h2>
+                            <h2 class="layui-colla-title layui-bg-green">教育机会</h2>
                             <div class="layui-colla-content layui-show">
                                 <div id="dataType">
-                                    <button data-type="A" class="layui-btn layui-btn-sm layui-btn-primary">云南</button>
-                                    <button data-type="B" class="layui-btn layui-btn-sm layui-btn-primary">贵州</button>
-                                    <button data-type="C" class="layui-btn layui-btn-sm layui-btn-primary">黑龙江</button>
+                                    <button data-type="E" class="layui-btn layui-btn-sm layui-btn-primary">小学学校数量</button>
+                                    <button data-type="F" class="layui-btn layui-btn-sm layui-btn-primary">中学学校数量</button>
+                                    <button data-type="G" class="layui-btn layui-btn-sm layui-btn-primary">村均小学数量</button>
                                 </div>
                             </div>
                         </div>
                         <div class="layui-colla-item">
-                            <h2 class="layui-colla-title layui-bg-green">普通小学专任教师数量</h2>
+                            <h2 class="layui-colla-title layui-bg-green">教学过程</h2>
                             <div class="layui-colla-content layui-show">
                                 <div id="dataType">
-                                    <button data-type="A" class="layui-btn layui-btn-sm layui-btn-primary">云南</button>
-                                    <button data-type="B" class="layui-btn layui-btn-sm layui-btn-primary">贵州</button>
-                                    <button data-type="C" class="layui-btn layui-btn-sm layui-btn-primary">黑龙江</button>
+                                    <button data-type="H" class="layui-btn layui-btn-sm layui-btn-primary">小学教师数量</button>
+                                    <button data-type="I" class="layui-btn layui-btn-sm layui-btn-primary">中学教师数量</button>
+                                    <button data-type="J" class="layui-btn layui-btn-sm layui-btn-primary">小学生师比</button>
+                                    <button data-type="K" class="layui-btn layui-btn-sm layui-btn-primary">中学生师比</button>
+                                    <button data-type="L" class="layui-btn layui-btn-sm layui-btn-primary">校均小学生数量</button>
+                                    <button data-type="M" class="layui-btn layui-btn-sm layui-btn-primary">校均中学生数量</button>
                                 </div>
                             </div>
                         </div>
                         <div class="layui-colla-item">
-                            <h2 class="layui-colla-title layui-bg-green">普通小学专任教师数量</h2>
+                            <h2 class="layui-colla-title layui-bg-green">教育投入</h2>
                             <div class="layui-colla-content layui-show">
                                 <div id="dataType">
-                                    <button data-type="A" class="layui-btn layui-btn-sm layui-btn-primary">云南</button>
-                                    <button data-type="B" class="layui-btn layui-btn-sm layui-btn-primary">贵州</button>
-                                    <button data-type="C" class="layui-btn layui-btn-sm layui-btn-primary">黑龙江</button>
+                                    <button data-type="P" class="layui-btn layui-btn-sm layui-btn-primary">教育经费</button>
+                                    <button data-type="Q" class="layui-btn layui-btn-sm layui-btn-primary">教育经费与学生数量之比</button>
                                 </div>
                             </div>
                         </div>
                         <div class="layui-colla-item">
-                            <h2 class="layui-colla-title layui-bg-green">普通小学专任教师数量</h2>
+                            <h2 class="layui-colla-title layui-bg-green">教育环境</h2>
                             <div class="layui-colla-content layui-show">
                                 <div id="dataType">
-                                    <button data-type="A" class="layui-btn layui-btn-sm layui-btn-primary">云南</button>
-                                    <button data-type="B" class="layui-btn layui-btn-sm layui-btn-primary">贵州</button>
-                                    <button data-type="C" class="layui-btn layui-btn-sm layui-btn-primary">黑龙江</button>
+                                    <button data-type="S" class="layui-btn layui-btn-sm layui-btn-primary">GDP</button>
+                                    <button data-type="T" class="layui-btn layui-btn-sm layui-btn-primary">教育经费与GDP之比</button>
+                        
                                 </div>
                             </div>
                         </div>
